@@ -6,7 +6,7 @@
 
     File:     pom.xml
     Folder:   /
-    Revision: 1.01, 15 November 2014
+    Revision: 1.02, 30 November 2014
     Created:  15 November 2014
     Authors:  Ilya Gubarev
 
@@ -35,7 +35,7 @@
     <parent>
         <groupId>com.soulwarelabs.sonatype</groupId>
         <artifactId>sonatype-parent</artifactId>
-        <version>1.0.0-beta2</version>
+        <version>1.0.0-beta3-SNAPSHOT</version>
     </parent>
 
     <groupId>com.soulwarelabs.jbrandy</groupId>
@@ -81,25 +81,45 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <versions.java.source>1.5</versions.java.source>
-        <versions.java.target>1.5</versions.java.target>
+        <versions.java.source>1.6</versions.java.source>
+        <versions.java.target>1.6</versions.java.target>
+        <versions.javax.ee>6.0</versions.javax.ee>
         <versions.libs.handlebars>1.3.2</versions.libs.handlebars>
+        <versions.libs.slf4j>1.7.7</versions.libs.slf4j>
+        <versions.libs.spring.mvc>4.1.2.RELEASE</versions.libs.spring.mvc>
+        <versions.libs.swl.jcommons>2.0.0-SNAPSHOT</versions.libs.swl.jcommons>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.github.jknack</groupId>
-                <artifactId>handlebars</artifactId>
-                <version>${versions.libs.handlebars}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>${versions.javax.ee}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>com.github.jknack</groupId>
             <artifactId>handlebars</artifactId>
+            <version>${versions.libs.handlebars}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.soulwarelabs.jcommons</groupId>
+            <artifactId>jcommons-api</artifactId>
+            <version>${versions.libs.swl.jcommons}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency> 
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${versions.libs.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${versions.libs.spring.mvc}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
